@@ -2,6 +2,9 @@ package com.example.newapp.activities;
 
 /**
  * Creer par Koffitse Aboudou .
+ Email Validation
+ http://www.tutorialsface.com/2015/10/android-validating-email-edittext-sample-example-methods-tutorial/
+ 
  */
 
 import android.app.ProgressDialog;
@@ -101,7 +104,6 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
             else {
 
                 if (mEmail.getText().toString().trim().matches(emailPattern)) {
@@ -111,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
                 }
 
             }
-
 
 
      //deuxième possibilité
@@ -163,17 +164,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
-
-
-
-
-
-
-
-
 
        // Passwortversteken Fonktion
         mPasswordDisplayCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
