@@ -198,3 +198,5 @@ J.+Do+not+log+unsanitized+user+input, zuletzt aktualisiert am 19.01.2021, zuletz
 9. http://www.tutorialsface.com/2015/10/android-validating-email-edittext-sample-example-methods-tutorial/​
 
 10.https://www.tutorialspoint.com/how-to-check-email-address-validation-in-android-on-edit-text​
+
+https://www.tutorialspoint.com/how-to-check-email-address-validation-in-android-on-edit-text
