@@ -1,5 +1,12 @@
 # Newapp
 Sichere Proragmming: Android Application Secure Design/Secure Coding
+Auteurs: Chege Faith 
+         Suzana Stankovic 
+	 Koffitse Aboudou
+
+
+
+
 Inhaltsverzeichnis
 1. Motivation	1
 2. Sicheres Design	2
