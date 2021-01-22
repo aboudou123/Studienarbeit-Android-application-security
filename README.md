@@ -1,8 +1,12 @@
 # Newapp
 Sichere Proragmming: Android Application Secure Design/Secure Coding
-Auteurs: Chege Faith 
-         Suzana Stankovic 
-	 Koffitse Aboudou
+Auteurs:
+
+Chege Faith 
+
+Suzana Stankovic 
+
+Koffitse Aboudou
 
 
 
@@ -30,7 +34,9 @@ Suzana Stankovic (00725310)
 
 
 Dozent/in: Michael Heigl
-	Tag der Einreichung: 22. Januar 2020
+
+
+Tag der Einreichung: 22. Januar 2020
 
  
  
