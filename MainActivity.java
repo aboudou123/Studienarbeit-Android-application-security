@@ -2,6 +2,8 @@ package com.example.newapp.activities;
 
 /**
  * Creer par Koffitse Aboudou .
+ *Chege Faith 
+ *Suzana Stankovic 
  Email Validation/RegExp
  http://www.tutorialsface.com/2015/10/android-validating-email-edittext-sample-example-methods-tutorial/
  
