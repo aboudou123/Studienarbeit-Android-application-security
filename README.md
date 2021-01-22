@@ -185,18 +185,18 @@ Online verfügbar unter https://wiki.sei.cmu.edu/confluence/display/java/IDS03-�
 
 J.+Do+not+log+unsanitized+user+input, zuletzt aktualisiert am 19.01.2021, zuletzt geprüft am 19.01.2021.​
 
-6.Android Secure Coding Standard - Android - Confluence (2021). Online verfügbar unter https://wiki.sei.cmu.edu/confluence/display/android/Android+Secure+Coding+Standard, zuletzt aktualisiert am ​
+6.   Android Secure Coding Standard - Android - Confluence (2021). Online verfügbar unter          https://wiki.sei.cmu.edu/confluence/display/android/Android+Secure+Coding+Standard, zuletzt aktualisiert am ​
 
 20.01.2021, zuletzt geprüft am 20.01.2021.​
 
 ​
 
-7. http://www.peterloos.de/index.php/android/m-menu-apps-with-cloud-interface/95-a-androidanothertodoapp​
+7.    http://www.peterloos.de/index.php/android/m-menu-apps-with-cloud-interface/95-a-androidanothertodoapp​
 
-8. Firebase Logo: https://upload.wikimedia.org/wikipedia/commons/b/bd/Firebase_Logo.png​
+8.   Firebase Logo: https://upload.wikimedia.org/wikipedia/commons/b/bd/Firebase_Logo.png​
 
-9. http://www.tutorialsface.com/2015/10/android-validating-email-edittext-sample-example-methods-tutorial/​
+9.   http://www.tutorialsface.com/2015/10/android-validating-email-edittext-sample-example-methods-tutorial/​
 
-10.https://www.tutorialspoint.com/how-to-check-email-address-validation-in-android-on-edit-text​
+10.    https://www.tutorialspoint.com/how-to-check-email-address-validation-in-android-on-edit-text​
 
-https://www.tutorialspoint.com/how-to-check-email-address-validation-in-android-on-edit-text
+       https://www.tutorialspoint.com/how-to-check-email-address-validation-in-android-on-edit-text
