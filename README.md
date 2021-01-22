@@ -1,2 +1,97 @@
 # Newapp
 Sichere Proragmming: Android Application Secure Design/Secure Coding
+Inhaltsverzeichnis
+1. Motivation	1
+2. Sicheres Design	2
+2.1 Grundlegende Kenntnisse	2
+2.2 Anwendung von sicherem Design	2
+3. Sichere Codierung - Login	4
+3.1 Passwortmaskierung	4
+3.2 Passwortanzeige im Klartext	4
+3.4 Fehlermeldungen	4
+4. Firebase	5
+4.1 Gültigkeit der Login-Daten	5
+5. Fazit	6
+
+ 
+ 
+1. Motivation
+In der heutigen Zeit werden Smartphones immer wichtiger. Laut einer Studie, welche am 15. Januar 2020 in der Frankfurter Allgemeinen erschienen ist, verbringen Nutzer 3,7 Stunden täglich am Smartphone. Bei Jugendlichen liegt diese Zahl sogar bei mehr als fünf Stunden. Die meiste Zeit davon wird in sozialen Netzwerken verbracht (vgl. FAZ, 2020). Über diese sozialen Netzwerke teilen Benutzer viele persönliche Informationen. Doch, um überhaupt in der Lage zu sein, „Social Media“ zu benutzen, muss man zuvor ein Benutzerkonto erstellen. 
+Bei der Registrierung werden die Nutzungsdaten kaum durchgelesen, sie werden einfach akzeptiert, ohne groß darüber nachzudenken. Doch Sicherheit sollte vor allem in der Technik eine große Rolle spielen. Persönliche Daten werden online gestellt und wie man weiß, was einmal im Internet ist, ist für immer im Internet. Die meisten Nutzer sind sich einer möglichen Unsicherheit entweder nicht bewusst oder es ihnen egal, was mit ihren Daten passiert. Sie haben volles Vertrauen in die Entwickler, dass sie die Programme, die sie verwenden sicher machen. 
+Aus den vorangestellten Gründen haben wir es uns zur Aufgabe gemacht eine sichere Applikation zu entwickeln. Unser fertiges Produkt ist eine App, welche Einnahmen und Ausgaben miteinander verrechnet und den aktuellen Geldbestand berechnet und anzeigt. Wir sind uns der Sicherheit beziehungsweise, der Unsicherheit bewusst gewesen und haben uns stets Gedanken zur dieser gemacht. Viele Funktionen sind bewusst unsicher programmiert worden, um Probleme aufzuzeigen. 
+Diese Arbeit setzt sich mit der Entwicklung dieser Applikation auseinander. Dabei werden zunächst alle verwendeten Softwares aufgelistet. Gefolgt von der genauen Beleuchtung des Aspektes des sicheren Designs. Darauffolgend, haben wir uns mit der sicheren Codierung beim Login beschäftigt. Der letzte Gesichtspunkt der Arbeit ist die sichere Datenspeicherung mit der, von uns gewählten, Datenbank, Firebase.  
+2. Benötigte Software
+Wir haben mit der Installation von Android Studio begonnen. Danach haben wir einen Emulator installiert, mit dem wir das Ergebnis der Anwendung nach der Kompilierung sehen können. Als Betriebssystem wurde Windows 10 verwendet. Daran wurden neben der Installation einiger Pakete und Programme keine weiteren Änderungen unternommen. Jetzt konnten wir mit der Implementierung beginnen. Diese wurde in drei Teile geteilt. Der erste war das Erstellen unseres Projektes mit dem Namen NewApp. Im zweiten Schritt haben wir uns der Konfiguration aller gewünschten Abhängigkeiten gewidmet. Zu guter Letzt kam das Initialisieren von Referenzen auf Layout-Ansichten. 
+
+3. Sicheres Design
+3.1 Grundlegende Kenntnisse
+Zunächst sollte die Begrifflichkeit geklärt werden. Diese könnte, durch die Wortwahl, zu eventuellen Missverständnissen führen. Sicheres Design bezieht sich hierbei nicht auf das Aussehen des Codes oder der Applikation, wie es das Wort Design zu vermuten lässt. Unter sicherem Design ist eine sichere Denkweise zu verstehen. 
+Ein Entwicklungsprozess wird häufig in vier Phasen unterteilt. In der ersten Phase, der sogenannten Spezifikations-Phase, werden alle Anforderungen und Voraussetzungen an das fertige Produkt gestellt. Die zweite Phase setzt sich mit dem Entwurf und der Implementierung auseinander. Hier wird das vorher spezifizierte ausprogrammiert. Die dritte Phase ist die Validierungsphase. Die letzte Phase bildet die Evolution. (vgl. Sandhaus, G. ,S.13) Wo genau wird hier jetzt sicheres Design angewandt? Ganz einfach. In allen Phasen der Entwicklung. Das Entwicklungsteam muss sich, zu jedem Zeitpunkt der Gefahren und Unsicherheiten bewusst sein und diese versuchen zu beseitigen. In jeder Phase können neue Gefahren festgestellt werden. Dabei ist wichtig zu wissen, dass Software schnell änderbar ist. Deswegen ist es umso wichtiger, dass man von Anfang an „sicher denkt“. Denn spätere Änderungen am Code können zu neuen Sicherheitslücken führen. 
+
+3.2 Anwendung von sicherem Design 
+Da wir uns an diese Voraussetzungen gehalten haben, können wir bei unserem Projekt von einer Applikation mit sicherem Design reden. Zunächst haben wir uns mit dem Thema Hacking auseinandergesetzt. Wir haben uns Gedanken darüber gemacht, auf welche Art und Weise unsere Software missbraucht werden kann. Dabei sind unter anderem die Aspekte sichere Kennworteingabe und Datenspeicherung aufgekommen. Wie bereits zuvor erwähnt gehen die Aspekte sicheres Design und sichere Codierung miteinander ein. Aus diesem Grund wurde hier eine klare Abgrenzung gesetzt und die beiden Thematiken werden genauer im Kapitel „Sichere Codierung - Login“ betrachtet. 
+Des Weiteren haben wir uns mit der Kompatibilität auseinandergesetzt. Unter diesem Begriff steckt die Anzeige der Daten auf verschiedenen Geräten. Einerseits könnte so ein Unterschied zwischen Geräten mit verschiedenen Bildschirmgrößen, wie Tablets, Handys und Computern, herrschen. Um die Applikation auf verschiedenen Geräten verwenden zu können, muss diese Anzeige angepasst werden. Ein weiterer Unterschied liegt zwischen den Betriebssystemen. Eine App sollte sowohl auf einem Android als auch auf einem IOS Gerät auf die gleiche Art und Weise laufen.  
+Zuletzt haben wir uns dem Aspekt der Berechtigungen, auf Englisch auch Permissions genannt, gewidmet. Es handelt sich um eine Android App, deswegen sollten wir zunächst die verschiedenen Funktionen betrachten. Vorangehend sollte klar gemacht werden, dass es eine Unterscheidung zwischen Funktionen, die das Smartphone und die App ausführen, gibt. Funktionen des Gerätes sind das Verwalten der Telefonnummer, Medien, wie beispielsweise Fotos oder Videos, oder Informationen zu Sensoren, wie z.B. den Standort. Funktionen einer Applikation hingegen können Kontakte, social Media Daten oder der Internetverlauf sein (vgl. 2019, S. 20). Einige App-Funktionen brauchen wiederrum Zugriff auf die des Gerätes, um ihre eigenen Funktionen richtig ausführen zu können. Eine Navigations-App zum Beispiel braucht Zugriff auf den Standort des Gerätes, welcher vom Smartphone selber erfasst wird. Eine Große Sicherheitslücke bieten Backups. Wenn sich ein Hacker Zugriff auf ein Gerät macht, kann er durch diese mehr Daten erhalten, als er ohne Backup hätte finden können. In der Code-Datei „AndroidManifest.xml“ werden diese Permissions vergeben. Dort müsste die Funktion des Backups ausgeschaltet werden. 
+!!! Bild von AndroidManifest.xml !!!!
+Es sollte erwähnt werden, dass Android so konzipiert wurde, dass die meisten Entwickler in der Lage sein werden ihre Anwendungen mit den Standardeinstellungen zu erstellen und nicht mit schwierigen Entscheidungen der Sicherheit konfrontiert werden. Android verfügt nämlich über eine Reihe von Sicherheitsfunktionen, welche in das Betriebssystem integriert sind und die Häufigkeit von Sicherheitsproblemen reduzieren. Einige dieser Funktionen werden im Folgenden genauer erklärt.
+Die erste ist die Android-Anwendungs-Sandbox, welche Code-Ausführungen für jede Anwendung isoliert. Die zweite ist das Android-Applikations-Framework, welches gängige Sicherheitsfunktionen, wie Kryptografie, Berechtigungen und Inter-Process-Communication, implementiert. Drittens gibt es bestimmte Technologien, wie ASLR oder NX, die Risiken im Zusammenhang mit häufigen Fehlern bei der Speicherverwaltung minimieren sollen. Zuletzt gibt es auch ein verschlüsseltes Dateisystem, das aktiviert werden kann, um Daten auf einem gestohlenen oder verloren gegangenem Android-Gerät, zu schützen.
+Mit diesen und vielen weiteren Sicherheitspraktiken sollten Android-App-Entwickler vertraut sein, um in ihre Anwendungen nicht vermeidbare Sicherheitslücken einzubauen.  
+4. Gestaltung der Benutzeroberfläche
+Die Benutzeroberfläche wurde sehr einfach gehalten. Sie zeigt ein Login Label mit zwei Text-Elementen für die Eingabe einer E-Mail und eines Passwortes. Das Layout enthält auch eine Schaltfläche, welche die Anmelde-Sequenz auslöst. Die Eingabefelder wurden dabei, unter Berücksichtigung der Input-Typen programmiert. Bei der E-Mail-Eingabe werden auch nur E-Mails akzeptiert. Außerdem haben wir uns an der Android-Bibliothek Material Design Components, kurz MDC, orientiert. Sie wurde von einem Team bei Google entwickelt. Diese bietet Entwicklern anhand eines zuverlässigen Entwicklungs-Workflows, Android-Applikationen implementieren zu können. Von dieser Bibliothek haben wir uns von einer Taste Gebrauch gemacht. Diese hat sich bei der Implementierung des Buttons und der Texteingaben als sehr nützlich erwiesen. 
+ 
+5. Sichere Codierung – Login
+Unter Login ist die richtige Eingabe von Daten zu verstehen. Diese Daten müssen zuvor registriert sein um, bei jedem Login-Versuch auf Richtigkeit geprüft werden zu können. Ist der Login erfolgreich, hat man Zugriff auf das dahinter befindliche Konto. Zum Login werden meistens ein Benutzername und das dazugehörige Passwort verlangt. 
+
+5.1 Passwortmaskierung 
+Da das Passwort der wichtigste Teil des Logins ist, sollte dieses nicht zu sehen sein. Deshalb gibt es die Funktion der Passwortmaskierung. Hierbei werden die eingegebenen Zeichen lediglich als Sternchen angezeigt. Man kann also nur die Länge des Passworts erkennen, ohne zu wissen, was sich dahinter verbirgt. Diese Lösung gibt es schon sehr lange im Bankwesen, wo die vier-stellige Bank-PIN maskiert ist, damit andere Personen diese nicht sehen können und sich unbefugten Zutritt auf das Konto eines anderen gewähren.
+ 
+Die obere Abbildung zeigt das maskierte Passwort an. Dieses ist nicht lesbar, wir wissen nur, dass es sich um eine Zeichefolge von sechs Zeichen handelt. Diese Funktionalität wurde durch Benutzung eines EditText-Elements erreicht. Der Parameter, der das Passwort speichert, ist vom Typ EditText. Dadurch ist man in der Lage, das Passwort verschlüsselt anzuzeigen.
+!!! Bild von Code, wo das drinnen steht !!!
+
+5.2 Passwortanzeige im Klartext
+Anders als beim Rechner, erfolgt die Passworteingabe am Smartphone nicht über eine physische Tastatur, sondern über den Touchscreen. Das Fehlen der Tasten führt des Öfteren zur Eingabe eines falschen Buchstaben, was eine richtige Passworteingabe erschwert. Das stellt jedoch kein großes Problem dar, solange es keine Richtlinien gibt, wie z.B. die Sperrung des Kontos nach fünf fehlerhaften Passworteingaben. Obwohl es diese Hürden zu überwinden gibt, nutzen die meisten Verbraucher soziale Netzwerke auf ihren Smartphones und wählen daher ein einfaches Passwort. Um den Benutzern die Möglichkeit zu geben, das eingegebene Passwort vor dem Absenden, noch einmal zu überprüfen, gibt es die Funktion, das Passwort im Klartext anzeigen zu lassen. Wenn diese Funktionalität gegeben ist, muss ein automatischer Abbruch dieser Anzeige implementiert sein. Beispiele hierzu sind, die Anzeige nur während der Berührung einer bestimmten Taste oder eine vordefinierte Dauer der Klartextanzeige. Hinzufügend sollte dem Benutzer auch eine Meldung angezeigt werden, welche vor einer Klartextanzeige warnt und erklärt, dass diese Funktion ein bestimmtes Risiko mit sich bringt (vgl. ,2019). Denn hierbei handelt es sich um eine unsichere Funktion, die anderen Personen einen Blick auf das Passwort erlaubt und wurde nur aus Präsentationszwecken in unserer Applikation implementiert.
+
+5.3 Bildschirmaufnahme deaktivieren 
+Ein Risiko der Klartextanzeige kommt mit dem Erzeugen einer Bildschirmaufnahme, auch Screenshot genannt, einher. Android hat mehrere Möglichkeiten implementiert, einen Screenshot zu erstellen. Die erste Möglichkeit ist das gemeinsame Drücken der Ein/Aus-Taste und der Leiser-Taste. Eine andere Möglichkeit ist, das Wischen mit dem Handrücken, von links nach rechts, über den Bildschirm des Smartphones. Das Auslösen einer Bildschirmaufnahme kann deshalb auch versehentlich geschehen. Wird eine Aufnahme getätigt, während das Passwort eingegeben wird, wird dieses Foto in der Galerie, in einer Cloud oder sogar auf einem externen Speichermedium gespeichert. Von dort aus kann ein potenzieller Angreifer eventuellen Zugriff auf die Login-Daten bekommen. Diese Aufnahme könnte unter anderem auch während eines Backups gespeichert werden und durch einen Hacker-Angriff in die falschen Hände kommen. Deswegen ist es wichtig die Screenshot-Funktion in der Entwicklungsphase der Applikation auszuschalten.
+
+5.4 Fehlermeldungen
+Werden die Login-Daten falsch eingegeben, muss die Applikation eine Fehlermeldung anzeigen. Dabei ist wichtig zu beachten, dass dem Benutzer nicht gesagt wird, welche Eingabe fehlerhaft war. Ein negatives Beispiel hierbei lautet: „Falsches Passwort“. Ein Angreifer weiß nun genau, welches Feld fehlerbehaftet ist und könnte sich durch mehrmaliges ausprobieren verschiedener, möglicher Passwörter Zugriff auf das Benutzerkonto verschaffen. Deswegen wird nach der Eingabe falscher Login-Daten in unsere Anwerndung folgende Fehlermeldung angezeigt: „Passwort oder E-Mail nicht korrekt“. Jetzt weiß der Angreifer nicht, welches Feld eine falsche Eingabe beinhaltet und ein möglicher Zugriff wird erschwert. 
+6. Firebase
+Da es sich bei unserer Anwendung um eine sichere Applikation handelt, muss die Datenverwaltung ebenfalls gesichert sein. Da wir in diesem Bereich zu wenig Erfahrung haben, haben wir uns gegen das Aufsetzen eines eigenen Servers und für die Datenbank Firebase entschieden. Die Database wurde von Experten, auf dem Gebiet der Sicherheit, entwickelt. Firebase ist eine Backend-Lösung von Google, welche auf der Google Cloud basiert. Mit Firebase kann man Daten von IOS, Android oder Web Applikationen speichern. Für kleine Projekte, wie das unsere, reicht selbst die kostenlose Version, welche einfache und sichere Konfigurationen mit sich bringt. Um Firebase benutzen zu können, braucht man lediglich eine Gmail oder ein Google-Konto. 
+Ein weiterer Aspekt, der für die Benutzung von Firebase gesprochen hat, war die einfache Implementierung in unser Projekt. Um unsere Anwendung und die Datenbank miteinander benutzen zu können, mussten wir die App in der Firebase registrieren und wiederum in unserer Anwendung die vorgefertigte Firebase-Konfigurationsdatei hinzufügen. Diese befindet sich in der Datei „build.gradle“. Firebase bringt viele Bibliotheken mit sich und um diese benutzen zu können muss man einfach nur eine Instanz der Datenbank in den Code implementieren. Eine Instanziierung sieht wie folgt aus: 
+		const database = firebase.database()
+ 
+6.1 Gültigkeit der Login-Daten
+Die Login-Daten können über Firebase ganz einfach verwaltet werden. 
+ 
+Über die Funktion „Authentication“ können die Benutzer verwaltet werden. Dort können Benutzer gelöscht oder hinzugefügt werden. Ebenso können Sign-In Methoden gewählt werden. Wir haben ledigleich das Registrieren durch eine E-Mail-Adresse oder ein Google-Konto zugelassen. Andere Methoden wäre der Login über Facebook oder Twitter. Sogar eine Anonyme Registrierung ist möglich. 
+ 
+Die Funktion „Realtime Database“ zeigt alle gespeicherten Daten an. Es werden selbst Daten, die in Echtzeit erstellt werden innerhalb von wenigen Millisekunden dargestellt. ¬¬Hinter dieser Funktion können auch Regeln aufgestellt werden. Diese Regeln verwalten die Schreib- und Lesezugriffe auf die Daten.  Es gibt noch viele andere Funktionen, die von Firebase zur Verfügung gestellt werden. Für die Datenverwaltung unserer Applikation reichen die genannten jedoch aus, deswegen werden wir nicht weiter auf Firebase eingehen.  
+5. Fazit
+Wir haben sehr viel Zeit in die Ausarbeitung dieses Projektes investiert und hätten uns deshalb ein besseres Ergebnis gewünscht. Der zuvor aufgeführte Aspekt der Kompatibilität wurde nicht weiter realisiert als die Benutzung auf einem Android Smartphone. Eine weitere Funktion, dessen Realisierung leider nicht mehr erreicht wurde, war das Zurücksetzen des vergebenen Passwortes.
+Dies verringert jedoch nicht den Lerneffekt, den wir aus der Erarbeitung gewinnen konnten. Wir haben einen sehr großen Einblick in Android Programmierung gemacht. Als angehende Informatik-Studenten wird uns sichere Programmierung stets begleiten. Bei unseren Recherchen waren wir sehr erstaunt, wie aktuell dieses Thema ist. Sichere Programmierung ist in vielen Bereichen vertreten und bietet verschiedenste Möglichkeiten. 
+Abschließend wollen wir unsere Arbeit mit einem Dank an unseren Professor, der uns einen tollen Einblick in die sichere Programmierung vermittelt hat. Wir sind uns bewusst geworden, wie unsicher wir in der Welt der sozialen Medien sind und wie unvorsichtig wir mit unseren persönlichen Daten umgehen. Wir werden uns auch weiterhin mit der Thematik der sicheren Programmierung auseinandersetzen.  
+6. Literaturverzeichnis
+1. Introduction — Android Application Secure Design/Secure Coding Guidebook 2019-12-01
+documentation (2019). Online verfügbar unter
+https://www.jssec.org/dl/android_securecoding_en/1_introduction.html, zuletzt aktualisiert
+am 19.12.2019, zuletzt geprüft am 19.01.2021
+
+2 . https://www.geeksforgeeks.org/how-to-use-material-text-input-layout-in-android/
+
+3 . Build your first app &nbsp;|&nbsp; Android Developers
+https://developer.android.com/training/basics/firstapp
+
+4. Secure your app &nbsp;|&nbsp; Android Developers
+https://developer.android.com/games/develop/safetynet?hl=en
+
+5. IDS03-J. Do not log unsanitized user input - SEI CERT Oracle Coding Standard for Java -
+Confluence (2021). Online verfügbar unter
+https://wiki.sei.cmu.edu/confluence/display/java/IDS03-J.+Do+not+log+unsanitized+user+inp
+ut, zuletzt aktualisiert am 19.01.2021, zuletzt geprüft am 19.01.2021.
+
+6. Studie am Anfang
+-https://www.faz.net/aktuell/wirtschaft/digitec/nutzer-verbringen-im-schnitt-3-7-stunden-am-s
+martphone-16582432.html#:~:text=Chatten%2C%20Serien%20schauen%20und%20online,i
+m%20Vorjahr%2C%20zeigt%20eine%20Studie.
+7. Hybride Software Entwicklung -> 2014
