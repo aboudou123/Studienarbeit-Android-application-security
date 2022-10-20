@@ -1,34 +1,19 @@
 # Newapp
 Sichere Proragmming: Android Application Secure Design/Secure Coding
-Auteurs:
-
-Chege Faith 
-
-Suzana Stankovic 
-
-Koffitse Aboudou
-
-
 
 
 Studiengang Angewandte Informatik
 Fakultät Angewandte Informatik
 
-
-
-
-
 Projektarbeit
 Kurs: Sichere Programmierung
- Android Applikation – Sicheres Design / Sichere Login-Kodierung
-
-
+Android Applikation – Sicheres Design / Sichere Login-Kodierung
 
 
 vorgelet von: 
-Aboudou Koffitse (00774763)
-Chege Faith (00718759)
-Suzana Stankovic (00725310)
+Aboudou Koffitse (00774763)=>Backend und Frontend
+Chege Faith (00718759)     => Frontend
+Suzana Stankovic (00725310)=> Frontend
 
 
 
