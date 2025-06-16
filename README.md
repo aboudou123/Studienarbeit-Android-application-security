@@ -18,20 +18,25 @@ Fakultät Angewandte Informatik
 
 Projektarbeit
 
-Kurs: Sichere Programmierung
+**Kurs: Sichere Programmierung**
+
 Android Applikation – Sicheres Design / Sichere Login-Kodierung
 
 
 vorgelet von: 
-Aboudou Koffitse (00774763)=>Backend und Frontend
-Chege Faith (00718759)     => Frontend
-Suzana Stankovic (00725310)=> Frontend
+
+* 👨Aboudou Koffitse (00774763)=>Backend und Frontend
+  
+* 👩Chege Faith (00718759)     => Frontend
+  
+* 👩Suzana Stankovic (00725310)=> Frontend
 
 ---
 
 #### Jury:
 
 Dozent/in: Michael Heigl
+
 Tag der Einreichung: 22. Januar 2020
 
 ---
