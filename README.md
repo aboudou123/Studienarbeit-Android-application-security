@@ -29,10 +29,6 @@ Suzana Stankovic (00725310)=> Frontend
 
 ---
 
-### 🔹 Wie Git funktioniert
-
-Git speichert *Snapshots* deines Projekts, nicht nur Unterschiede. Es arbeitet lokal, das heißt, du brauchst kein Netzwerk, um es zu nutzen.
-
 #### Jury:
 
 Dozent/in: Michael Heigl
