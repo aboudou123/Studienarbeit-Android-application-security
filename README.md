@@ -1,11 +1,23 @@
-# Newapp
-Sichere Proragmming: Android Application Secure Design/Secure Coding
 
+# Sichere Proragmming: Android Application Secure Design/Secure Coding
+
+
+## **1 – Einführung**
+
+Entwicklung einer sicheren Android-Applikation mit Fokus auf Secure Design und Secure Coding, einschließlich der Implementierung von Sicherheitsmechanismen wie Android Keystore, SSL/TLS-Verschlüsselung, Schutz vor SQL-Injektionen sowie Durchführung von Code-Reviews und Sicherheitstests zur frühzeitigen Erkennung und Behebung von Schwachstellen
+
+
+**Wichtigste Vorteile:**
+
+- Änderungen rückgängig machen
+- Zusammenarbeit erleichtern
+- Branching & Merging (für paralleles Arbeiten)
 
 Studiengang Angewandte Informatik
 Fakultät Angewandte Informatik
 
 Projektarbeit
+
 Kurs: Sichere Programmierung
 Android Applikation – Sicheres Design / Sichere Login-Kodierung
 
@@ -15,16 +27,18 @@ Aboudou Koffitse (00774763)=>Backend und Frontend
 Chege Faith (00718759)     => Frontend
 Suzana Stankovic (00725310)=> Frontend
 
+---
 
+### 🔹 Wie Git funktioniert
 
+Git speichert *Snapshots* deines Projekts, nicht nur Unterschiede. Es arbeitet lokal, das heißt, du brauchst kein Netzwerk, um es zu nutzen.
+
+#### Jury:
 
 Dozent/in: Michael Heigl
-
-
 Tag der Einreichung: 22. Januar 2020
 
- 
- 
+---
 Inhaltsverzeichnis
 Abbildungsverzeichnis	III
 1. Motivation	1
@@ -34,8 +48,8 @@ Abbildungsverzeichnis	III
 3.2 Anwendung von sicherem Design	3
 5. Sichere Codierung – Login	5
 5.2 Passwortanzeige	6
-5.2.1 Passwortmaskierung	6
-5.2.2 Passwortanzeige im Klartext	7
+5.2-1 Passwortmaskierung	6
+5.2-2 Passwortanzeige im Klartext	7
 5.3 Bildschirmaufnahme deaktivieren	7
 5.4 Fehlermeldungen	8
 6. Firebase	8
@@ -52,7 +66,8 @@ Abbildung 4: Firebase Implementierung	9
 Abbildung 5: Firebase Instanziierung	9
 Abbildung 6: Autentication	10
 Abbildung 7: Realtime Database	10
- 
+
+
 1. Motivation
 
 In der heutigen Zeit werden Smartphones immer wichtiger. Laut einer Studie, welche am 15. Januar 2020 in der Frankfurter Allgemeinen erschienen ist, verbringen Nutzer 3,7 Stunden täglich am Smartphone (vgl. FAZ, 2020). Bei Jugendlichen liegt diese Zahl sogar bei mehr als fünf Stunden. (vgl. PZ-news, 2019). Die meiste Zeit davon wird in sozialen Netzwerken verbracht Über diese sozialen Netzwerke teilen Benutzer viele persönliche Informationen. Doch, um überhaupt in der Lage zu sein, „Social Media“ zu benutzen, muss man zuvor ein Benutzerkonto erstellen. 
@@ -103,7 +118,7 @@ Es handelt sich hierbei nicht um eine vollständig korrekte RegEx zur Überprüf
 
 5.2 Passwortanzeige
 
-5.2.1 Passwortmaskierung 
+5.2-1 Passwortmaskierung 
 
 Da das Passwort der wichtigste Teil des Logins ist, sollte dieses nicht zu sehen sein. Deshalb gibt es die Funktion der Passwortmaskierung. Hierbei werden die eingegebenen Zeichen lediglich als Sternchen angezeigt. Man kann also nur die Länge des Passworts erkennen, ohne zu wissen, was sich dahinter verbirgt. Diese Lösung gibt es schon sehr lange im Bankwesen, wo die vier-stellige Bank-PIN maskiert ist, damit andere Personen diese nicht sehen können und sich unbefugten Zutritt auf das Konto eines anderen gewähren.
  
@@ -111,7 +126,8 @@ Abbildung 3: maskiertes Passwort
 
 Die obere Abbildung zeigt das maskierte Passwort an. Dieses ist nicht lesbar, wir wissen nur, dass es sich um eine Zeichefolge von sechs Zeichen handelt. Diese Funktionalität wurde durch Benutzung eines EditText-Elements erreicht. Der Parameter, der das Passwort speichert, ist vom Typ EditText. Dadurch ist man in der Lage, das Passwort verschlüsselt anzuzeigen.
 
-5.2.2 Passwortanzeige im Klartext
+5.2-2 Passwortanzeige im Klartext
+
 Anders als beim Rechner, erfolgt die Passworteingabe am Smartphone nicht über eine physische Tastatur, sondern über den Touchscreen. Das Fehlen der Tasten führt des Öfteren zur Eingabe eines falschen Buchstaben, was eine richtige Passworteingabe erschwert. Das stellt jedoch kein großes Problem dar, solange es keine Richtlinien gibt, wie z.B. die Sperrung des Kontos nach fünf fehlerhaften Passworteingaben. Obwohl es diese Hürden zu überwinden gibt, nutzen die meisten Verbraucher soziale Netzwerke auf ihren Smartphones und wählen daher ein einfaches Passwort. Um den Benutzern die Möglichkeit zu geben, das eingegebene Passwort vor dem Absenden, noch einmal zu überprüfen, gibt es die Funktion, das Passwort im Klartext anzeigen zu lassen. Wenn diese Funktionalität gegeben ist, muss ein automatischer Abbruch dieser Anzeige implementiert sein. Beispiele hierzu sind, die Anzeige nur während der Berührung einer bestimmten Taste oder eine vordefinierte Dauer der Klartextanzeige. Hinzufügend sollte dem Benutzer auch eine Meldung angezeigt werden, welche vor einer Klartextanzeige warnt und erklärt, dass diese Funktion ein bestimmtes Risiko mit sich bringt (vgl. Sawada et al., 2019, S. 320). Denn hierbei handelt es sich um eine unsichere Funktion, die anderen Personen einen Blick auf das Passwort erlaubt und wurde nur aus Präsentationszwecken in unserer Applikation implementiert.
 
 5.3 Bildschirmaufnahme deaktivieren 
@@ -141,6 +157,7 @@ In der Registerkarte „Authentication“ gibt es auch andere Funktionen, wie di
 Die Firebase-Funktion „Realtime Database“ zeigt alle gespeicherten Daten an. Es werden selbst Daten, die in Echtzeit erstellt werden innerhalb von wenigen Millisekunden, dargestellt. ¬¬
  
 Abbildung 7: Realtime Database
+
 In Abbildung 6 ist zu sehen, welche Daten eingegeben wurden. Auch hier wird mit Hashwerten gearbeitet. Aus dieser Darstellung sind keine wichtigen Daten zu erkennen. Alle verschlüsselten Daten hätten auch anders dargestellt werden können. Wenn wir bei der Implementierung die Möglichkeit der Vergabe einer eigenen Identifizierung gegeben hätten, wäre diese hier angezeigt. Da dies nicht der Fall war, erstellt Firebase einen gehashten Wert. Selbst wenn sich jemand unbefugten Zugriff auf die Firebase machen sollte, wird diesem die Datenbeschaffung erschwert.
 Unter der Realtime Database-Funktion können auch Regeln aufgestellt werden. Diese Regeln verwalten die Schreib- und Lesezugriffe auf die Daten. Google hat hier eine Testfunktion direkt in die Firebase integriert, mit der es möglich ist die Zugriffsfunktionen zu testen. 
 Es gibt noch viele andere Funktionen, die von Firebase zur Verfügung gestellt werden. Für die Datenverwaltung unserer Applikation reichen die genannten jedoch aus, deswegen werden wir auch nicht weiter auf die Funktionalitäten von Firebase eingehen.
@@ -170,7 +187,8 @@ Online verfügbar unter https://wiki.sei.cmu.edu/confluence/display/java/IDS03-�
 
 J.+Do+not+log+unsanitized+user+input, zuletzt aktualisiert am 19.01.2021, zuletzt geprüft am 19.01.2021.​
 
-6.   Android Secure Coding Standard - Android - Confluence (2021). Online verfügbar unter          https://wiki.sei.cmu.edu/confluence/display/android/Android+Secure+Coding+Standard, zuletzt aktualisiert am ​
+6. Android Secure Coding Standard - Android - Confluence (2021). Online verfügbar unter          
+https://wiki.sei.cmu.edu/confluence/display/android/Android+Secure+Coding+Standard, zuletzt aktualisiert am ​
 
 20.01.2021, zuletzt geprüft am 20.01.2021.​
 
@@ -182,6 +200,7 @@ J.+Do+not+log+unsanitized+user+input, zuletzt aktualisiert am 19.01.2021, zuletz
 
 9.   http://www.tutorialsface.com/2015/10/android-validating-email-edittext-sample-example-methods-tutorial/​
 
-10.    https://www.tutorialspoint.com/how-to-check-email-address-validation-in-android-on-edit-text​
+10.  https://www.tutorialspoint.com/how-to-check-email-address-validation-in-android-on-edit-text​
 
-       https://www.tutorialspoint.com/how-to-check-email-address-validation-in-android-on-edit-text
+11. https://www.tutorialspoint.com/how-to-check-email-address-validation-in-android-on-edit-text
+
