@@ -13,8 +13,8 @@ Entwicklung einer sicheren Android-Applikation mit Fokus auf Secure Design und S
 - Zusammenarbeit erleichtern
 - Branching & Merging (für paralleles Arbeiten)
 
-Studiengang Angewandte Informatik
-Fakultät Angewandte Informatik
+Studiengang Angewandte Informatik/-IoT
+
 
 Projektarbeit
 
